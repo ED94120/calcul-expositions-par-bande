@@ -24,8 +24,8 @@ export const BAND_STATUS = {
   ERREUR: "erreur"
 };
 
-export const MAJ_PIRE_FF_DB = 4;
-export const MAJ_PIRE_FO_DB = 14.75;
+export const ATT_PIRE_FF_DB = 4;
+export const ATT_PIRE_FO_DB = 14.75;
 
 export const VITRAGE_ATT_DB = {
   [VITRAGE_KEYS.EXTERIEUR]: 0,
