@@ -1,5 +1,5 @@
 export const APP_CONFIG = {
-  nbMaxPireParBande: 10,
+  nbMaxPireParBande: 5,
   nbDecimalesAffichage: 2,
   modeFFParDefaut: "2bandes",
   vitrageParDefaut: "simple"
