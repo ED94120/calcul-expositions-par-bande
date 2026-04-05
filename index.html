@@ -1,1 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calcul des expositions par bande</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="app-container">
 
+    <header class="app-header">
+      <h1>Calcul des expositions par bande</h1>
+      <p class="app-subtitle">
+        Calcul des expositions électriques par bande selon les hypothèses intégrées de l’outil.
+      </p>
+    </header>
+
+    <section class="panel panel-parameters" aria-labelledby="titre-parametres">
+      <h2 id="titre-parametres">Paramètres généraux</h2>
+
+      <div class="parameters-grid">
+        <div class="field-group">
+          <label for="distance3d">Distance 3D entre l’antenne et le point de calcul</label>
+          <div class="input-with-unit">
+            <input
+              type="text"
+              id="distance3d"
+              name="distance3d"
+              inputmode="decimal"
+              autocomplete="off"
+              aria-describedby="distance3d-help distance3d-error"
+            >
+            <span class="unit">m</span>
+          </div>
+          <div id="distance3d-help" class="field-help">
+            Utiliser la distance spatiale réelle, et non la distance horizontale.
+          </div>
+          <div id="distance3d-error" class="field-error" aria-live="polite"></div>
+        </div>
+
+        <div class="field-group">
+          <label for="modeFF">Directivité antenne à faisceau fixe</label>
+          <select id="modeFF" name="modeFF">
+            <option value="2bandes" selected>2 bandes</option>
+            <option value="3bandes">3 bandes</option>
+          </select>
+        </div>
+
+        <div class="field-group">
+          <label for="vitrage">Vitrage interposé</label>
+          <select id="vitrage" name="vitrage">
+            <option value="exterieur">Extérieur</option>
+            <option value="simple" selected>Simple</option>
+            <option value="double">Double</option>
+            <option value="faible_emissivite">Faible émissivité</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel panel-bands" aria-labelledby="titre-bandes">
+      <h2 id="titre-bandes">Saisie et calcul par bande</h2>
+
+      <div class="bands-intro">
+        <p>
+          Saisir les PIRE en <strong>dBW</strong>, une valeur par ligne.
+          Les valeurs négatives sont autorisées.
+        </p>
+      </div>
+
+      <div id="bands-container" class="bands-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="panel panel-results" aria-labelledby="titre-resultats">
+      <h2 id="titre-resultats">Résultats globaux</h2>
+
+      <div class="results-grid">
+        <div class="result-row">
+          <label for="expoFF">Exposition générée par l’antenne à faisceau fixe</label>
+          <div class="result-with-unit">
+            <input type="text" id="expoFF" name="expoFF" readonly class="field-calculated">
+            <span class="unit">V/m</span>
+          </div>
+          <button type="button" id="btnCopyFF">Copie Exposition FF</button>
+        </div>
+
+        <div class="result-row">
+          <label for="expoFO">Exposition générée par l’antenne à faisceau orientable</label>
+          <div class="result-with-unit">
+            <input type="text" id="expoFO" name="expoFO" readonly class="field-calculated">
+            <span class="unit">V/m</span>
+          </div>
+          <button type="button" id="btnCopyFO">Copie Exposition FO</button>
+        </div>
+
+        <div class="result-row result-row-total">
+          <label for="expoTotale">Exposition totale</label>
+          <div class="result-with-unit">
+            <input type="text" id="expoTotale" name="expoTotale" readonly class="field-calculated">
+            <span class="unit">V/m</span>
+          </div>
+          <button type="button" id="btnCopyTotale">Copie Exposition totale</button>
+        </div>
+      </div>
+
+      <div class="actions-row">
+        <button type="button" id="btnReset" class="btn-reset">Reset</button>
+      </div>
+    </section>
+
+    <div id="appMessage" class="app-message" aria-live="polite"></div>
+
+  </main>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
