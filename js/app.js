@@ -96,14 +96,14 @@ async function handleCopy(value) {
 }
 
 function bindEvents() {
-  dom.distanceInput.addEventListener("input", syncAndRecompute);
+  dom.distanceInput.addEventListener("change", syncAndRecompute);
   dom.vitrageSelect.addEventListener("change", syncAndRecompute);
 
   dom.modeFFSelect.addEventListener("change", (event) => {
     handleModeChange(event.target.value);
   });
 
-  dom.bandsContainer.addEventListener("input", (event) => {
+  dom.bandsContainer.addEventListener("change", (event) => {
     if (
       event.target.classList.contains("field-pire") ||
       event.target.classList.contains("field-attenuation")
