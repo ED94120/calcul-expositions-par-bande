@@ -1,7 +1,7 @@
 import {
   BAND_STATUS,
-  MAJ_PIRE_FF_DB,
-  MAJ_PIRE_FO_DB,
+  ATT_PIRE_FF_DB,
+  ATT_PIRE_FO_DB,
   VITRAGE_ATT_DB,
   BAND_KEYS
 } from "./constants.js";
@@ -85,8 +85,8 @@ export function evaluateBand(band, distanceValue, vitrageKey) {
     0
   );
 
-  const majDb = evaluated.isFO ? MAJ_PIRE_FO_DB : MAJ_PIRE_FF_DB;
-  evaluated.pireMajoreeW = evaluated.pireTotalW * dbToLinear(majDb);
+  const majDb = evaluated.isFO ? ATT_PIRE_FO_DB : ATT_PIRE_FF_DB;
+  evaluated.pireMajoreeW = evaluated.pireTotalW / dbToLinear(majDb);
 
   evaluated.attenuationVitrageDb = getVitrageAttenuationDb(vitrageKey);
   evaluated.attenuationTotaleDb =
