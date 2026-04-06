@@ -21,22 +21,41 @@
 
       <div class="parameters-grid">
         <div class="field-group">
-          <label for="distance3d">Distance 3D entre l’antenne et le point de calcul</label>
+          <label for="distance3dFF">Distance 3D entre l’antenne à faisceau fixe et le point de calcul</label>
           <div class="input-with-unit">
             <input
               type="text"
-              id="distance3d"
-              name="distance3d"
+              id="distance3dFF"
+              name="distance3dFF"
               inputmode="decimal"
               autocomplete="off"
-              aria-describedby="distance3d-help distance3d-error"
+              aria-describedby="distance3dFF-help distance3dFF-error"
             >
             <span class="unit">m</span>
           </div>
-          <div id="distance3d-help" class="field-help">
-            Utiliser la distance spatiale réelle, et non la distance horizontale.
+          <div id="distance3dFF-help" class="field-help">
+            Utiliser la distance spatiale réelle entre l’antenne à faisceau fixe et le point de calcul.
           </div>
-          <div id="distance3d-error" class="field-error" aria-live="polite"></div>
+          <div id="distance3dFF-error" class="field-error" aria-live="polite"></div>
+        </div>
+
+        <div class="field-group">
+          <label for="distance3dFO">Distance 3D entre l’antenne à faisceau orientable et le point de calcul</label>
+          <div class="input-with-unit">
+            <input
+              type="text"
+              id="distance3dFO"
+              name="distance3dFO"
+              inputmode="decimal"
+              autocomplete="off"
+              aria-describedby="distance3dFO-help distance3dFO-error"
+            >
+            <span class="unit">m</span>
+          </div>
+          <div id="distance3dFO-help" class="field-help">
+            Utiliser la distance spatiale réelle entre l’antenne à faisceau orientable et le point de calcul.
+          </div>
+          <div id="distance3dFO-error" class="field-error" aria-live="polite"></div>
         </div>
 
         <div class="field-group">
