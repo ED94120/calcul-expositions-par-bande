@@ -96,7 +96,8 @@ async function handleCopy(value) {
 }
 
 function bindEvents() {
-  dom.distanceInput.addEventListener("change", syncAndRecompute);
+  dom.distanceFFInput.addEventListener("change", syncAndRecompute);
+  dom.distanceFOInput.addEventListener("change", syncAndRecompute);
   dom.vitrageSelect.addEventListener("change", syncAndRecompute);
 
   dom.modeFFSelect.addEventListener("change", (event) => {
