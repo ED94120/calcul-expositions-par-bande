@@ -34,7 +34,8 @@ export function getVisibleBandKeys(modeFF) {
 export function createInitialState() {
   const state = {
     settings: {
-      distanceText: "",
+      distanceTextFF: "",
+      distanceTextFO: "",
       modeFF: APP_CONFIG.modeFFParDefaut,
       vitrage: APP_CONFIG.vitrageParDefaut
     },
@@ -51,7 +52,8 @@ export function createInitialState() {
       expoTotale: null
     },
     errors: {
-      distance: ""
+      distanceFF: "",
+      distanceFO: ""
     }
   };
 
