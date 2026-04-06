@@ -142,13 +142,20 @@ export function recomputeState(state) {
     band.visible = visibleKeys.includes(band.key);
   });
 
-  const distanceEval = evaluateDistance(nextState.settings.distanceText);
-  nextState.errors.distance = distanceEval.error;
+  const distanceEvalFF = evaluateDistance(nextState.settings.distanceTextFF);
+  const distanceEvalFO = evaluateDistance(nextState.settings.distanceTextFO);
+
+  nextState.errors.distanceFF = distanceEvalFF.error;
+  nextState.errors.distanceFO = distanceEvalFO.error;
 
   visibleKeys.forEach((bandKey) => {
+    const distanceValue = nextState.bands[bandKey].isFO
+      ? distanceEvalFO.value
+      : distanceEvalFF.value;
+
     nextState.bands[bandKey] = evaluateBand(
       nextState.bands[bandKey],
-      distanceEval.value,
+      distanceValue,
       nextState.settings.vitrage
     );
     nextState.bands[bandKey].visible = true;
@@ -165,7 +172,13 @@ export function recomputeState(state) {
       nextState.bands[bandKey].attenuationError = "";
     });
 
-  if (!distanceEval.isValid || hasVisibleBandError(nextState)) {
+  const hasInvalidDistanceForVisibleBands = visibleKeys.some((bandKey) =>
+    nextState.bands[bandKey].isFO
+      ? !distanceEvalFO.isValid
+      : !distanceEvalFF.isValid
+  );
+
+  if (hasInvalidDistanceForVisibleBands || hasVisibleBandError(nextState)) {
     nextState.results.expoFF = null;
     nextState.results.expoFO = null;
     nextState.results.expoTotale = null;
