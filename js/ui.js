@@ -121,7 +121,7 @@ export function createBandCard(bandKey, bandLabel) {
   sectionExpo.className = "band-section";
 
   const expoLabel = document.createElement("label");
-  expoLabel.className = "band-section-title";
+  expoLabel.className = "band-section-title calculated-label";
   expoLabel.setAttribute("for", `expo-${bandKey}`);
   expoLabel.textContent = "Exposition (V/m)";
 
