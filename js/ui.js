@@ -5,8 +5,10 @@ import { getVisibleBandKeys } from "./model.js";
 
 export function cacheDom() {
   return {
-    distanceInput: document.getElementById("distance3d"),
-    distanceError: document.getElementById("distance3d-error"),
+    distanceFFInput: document.getElementById("distance3dFF"),
+    distanceFFError: document.getElementById("distance3dFF-error"),
+    distanceFOInput: document.getElementById("distance3dFO"),
+    distanceFOError: document.getElementById("distance3dFO-error"),
     modeFFSelect: document.getElementById("modeFF"),
     vitrageSelect: document.getElementById("vitrage"),
     bandsContainer: document.getElementById("bands-container"),
@@ -175,7 +177,8 @@ export function populateBandInputsFromState(state) {
 }
 
 export function readInputsIntoState(state, dom) {
-  state.settings.distanceText = dom.distanceInput.value;
+  state.settings.distanceTextFF = dom.distanceFFInput.value;
+  state.settings.distanceTextFO = dom.distanceFOInput.value;
   state.settings.modeFF = dom.modeFFSelect.value;
   state.settings.vitrage = dom.vitrageSelect.value;
 
@@ -194,14 +197,20 @@ export function readInputsIntoState(state, dom) {
   });
 }
 
-export function clearDistanceError(dom) {
-  dom.distanceInput.classList.remove("is-error");
-  dom.distanceError.textContent = "";
+export function clearDistanceError(dom, type) {
+  const input = type === "FO" ? dom.distanceFOInput : dom.distanceFFInput;
+  const error = type === "FO" ? dom.distanceFOError : dom.distanceFFError;
+
+  if (input) input.classList.remove("is-error");
+  if (error) error.textContent = "";
 }
 
-export function setDistanceError(dom, message) {
-  dom.distanceInput.classList.add("is-error");
-  dom.distanceError.textContent = message;
+export function setDistanceError(dom, type, message) {
+  const input = type === "FO" ? dom.distanceFOInput : dom.distanceFFInput;
+  const error = type === "FO" ? dom.distanceFOError : dom.distanceFFError;
+
+  if (input) input.classList.add("is-error");
+  if (error) error.textContent = message;
 }
 
 export function clearPireFieldError(bandKey, index) {
@@ -247,7 +256,8 @@ export function setBandErrorState(bandKey, message) {
 }
 
 export function resetVisualState(state, dom) {
-  clearDistanceError(dom);
+  clearDistanceError(dom, "FF");
+  clearDistanceError(dom, "FO");
 
   getVisibleBandKeys(state.settings.modeFF).forEach((bandKey) => {
     clearBandErrorState(bandKey);
@@ -275,8 +285,12 @@ export function renderGlobalResults(state, dom) {
 }
 
 export function renderErrors(state, dom) {
-  if (state.errors.distance) {
-    setDistanceError(dom, state.errors.distance);
+  if (state.errors.distanceFF) {
+    setDistanceError(dom, "FF", state.errors.distanceFF);
+  }
+
+  if (state.errors.distanceFO) {
+    setDistanceError(dom, "FO", state.errors.distanceFO);
   }
 
   getVisibleBandKeys(state.settings.modeFF).forEach((bandKey) => {
@@ -305,7 +319,8 @@ export function showAppMessage(dom, message) {
 }
 
 export function renderApp(state, dom) {
-  dom.distanceInput.value = state.settings.distanceText;
+  dom.distanceFFInput.value = state.settings.distanceTextFF;
+  dom.distanceFOInput.value = state.settings.distanceTextFO;
   dom.modeFFSelect.value = state.settings.modeFF;
   dom.vitrageSelect.value = state.settings.vitrage;
 
