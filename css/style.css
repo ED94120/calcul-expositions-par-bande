@@ -251,6 +251,11 @@ button:focus {
   color: var(--color-title);
 }
 
+.band-section-title.calculated-label {
+  color: #1d4ed8;
+  font-weight: 700;
+}
+
 /* Liste PIRE */
 
 .pire-list {
