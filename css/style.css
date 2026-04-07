@@ -257,7 +257,7 @@ button:focus {
 }
 
 label.band-section-title.attenuation-deport-label {
-  color: #800080;
+  color: #FF00FF; /* fuschia */
 }
 
 .band-section-title.calculated-label {
