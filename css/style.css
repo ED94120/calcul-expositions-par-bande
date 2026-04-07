@@ -113,6 +113,15 @@ body {
   margin: 0;
 }
 
+label[for="distance3dFF"],
+label[for="distance3dFO"] {
+  color: #8a2be2;   /* violet */
+}
+
+.attenuation-deport-label {
+  color: #800080;   /* mauve soutenu */
+}
+
 .field-help {
   font-size: 0.88rem;
   color: var(--color-text-soft);
