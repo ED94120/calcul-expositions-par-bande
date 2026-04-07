@@ -157,6 +157,11 @@ select {
   color: var(--color-text);
 }
 
+.field-group-vitrage select,
+.field-group select#modeFF {
+  width: calc(100% - 2.2rem);
+}
+
 input[type="text"]:focus,
 select:focus,
 button:focus {
@@ -167,7 +172,7 @@ button:focus {
 .input-with-unit,
 .result-with-unit {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr 2.2rem;
   gap: var(--space-2);
   align-items: center;
 }
