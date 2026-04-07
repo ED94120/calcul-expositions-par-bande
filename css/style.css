@@ -94,8 +94,9 @@ body {
 
 .parameters-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: var(--space-4);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: var(--space-4);
+  row-gap: var(--space-3);
   align-items: start;
 }
 
@@ -131,6 +132,10 @@ label[for="distance3dFO"] {
   font-size: 0.85rem;
   color: var(--color-error);
   margin: 0;
+}
+
+.field-group-vitrage {
+  grid-column: 1 / 2;
 }
 
 /* Inputs */
