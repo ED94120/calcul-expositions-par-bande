@@ -96,7 +96,7 @@ export function createBandCard(bandKey, bandLabel) {
   sectionAtt.className = "band-section";
 
   const attLabel = document.createElement("label");
-  attLabel.className = "band-section-title";
+  attLabel.className = "band-section-title attenuation-deport-label";
   attLabel.setAttribute("for", `att-${bandKey}`);
   attLabel.textContent = "Atténuation additionnelle (dB) liée au déport à l'axe";
 
