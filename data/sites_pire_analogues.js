@@ -188,6 +188,21 @@ const sitesPireAnalogues = [
   },
   {
     id: "site_011",
+    operateur: "Orange",
+    environnement: "zone_rurale",
+    hma_m: 34.50,
+    type_document: "DIM",
+    annee: 2022,
+    site_nom: "Saint Péran (35380) - Lande Alouette",
+    label: "Orange | Zone rurale | HMA 34.50 m | DIM 2022 | Saint Péran (35380) - Lande Alouette",
+    pires: {
+      "3G900": 29,40,
+      "4G700": 32,40,
+      "4G800": 32,40
+    }
+  },
+  {
+    id: "site_012",
     operateur: "Bouygues",
     environnement: "agglomeration_dense",
     hma_m: 24.5,
