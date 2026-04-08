@@ -165,11 +165,29 @@ const sitesPireAnalogues = [
       "4G800": 32.40,
       "4G1800": 34.80,
       "4G2100": 34.80,
-      "5G700" : 32.40,
+      "5G700" : 32.40
     }
   },
   {
     id: "site_010",
+    operateur: "FREE",
+    environnement: "zone_rurale",
+    hma_m: 34.65,
+    type_document: "DIM",
+    annee: 2024,
+    site_nom: "Plumergat (56400) - Lann Mangouero sud",
+    label: "FREE | Zone rurale | HMA 34.65 m | DIM 2024 | Plumergat (56400) - Lann Mangouero sud",
+    pires: {
+      "4G700": 31,
+      "5G700": 31,
+      "3G900": 29,
+      "4G1800": 33,
+      "4G2100": 33,
+      "4G2600" : 33
+    }
+  },
+  {
+    id: "site_011",
     operateur: "Bouygues",
     environnement: "agglomeration_dense",
     hma_m: 24.5,
