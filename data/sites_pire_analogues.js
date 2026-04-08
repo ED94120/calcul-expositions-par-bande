@@ -132,8 +132,28 @@ const sitesPireAnalogues = [
       "5G3500": 49.3
     }
   },
-  {
+     {
     id: "site_008",
+    operateur: "FREE",
+    environnement: "agglomeration_dense",
+    hma_m: 45.95,
+    type_document: "DIM",
+    annee: 2023,
+    site_nom: "Paris - 28/34 rue Archereau",
+    label: "FREE | Agglomération dense | HMA 45.95 m | DIM 2023 | Paris - 28/34 rue Archereau",
+    pires: {
+      "3G900": 29,
+      "3G2100" : 30,
+      "4G700": 31,
+      "4G1800": 33,
+      "4G2100": 33,
+      "4G2600": 33,
+      "5G700" : 31,
+      "5G3500": 47.6
+    }
+  },
+  {
+    id: "site_009",
     operateur: "Bouygues",
     environnement: "agglomeration_dense",
     hma_m: 24.5,
