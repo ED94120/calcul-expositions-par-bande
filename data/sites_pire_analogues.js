@@ -37,6 +37,25 @@ const sitesPireAnalogues = [
   },
   {
     id: "site_003",
+    operateur: "FREE",
+    environnement: "zone_rurale",
+    hma_m: 34.6,
+    type_document: "DIM",
+    annee: 2023,
+    site_nom: "Boissy l'Aillerie (95650)",
+    label: "FREE | Zone rurale | HMA 34.6 m | DIM 2023 | Boissy l'Aillerie (95650)",
+    pires: {
+      "4G700": 31,
+      "5G700": 31,
+      "3G900": 29,
+      "4G1800": 33,
+      "4G2100": 33,
+      "4G2600": 33,
+      "5G3500": 47,
+    }
+  },
+  {
+    id: "site_004",
     operateur: "Bouygues",
     environnement: "agglomeration_dense",
     hma_m: 24.5,
