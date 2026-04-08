@@ -19,6 +19,9 @@ export function cacheDom() {
     btnCopyFO: document.getElementById("btnCopyFO"),
     btnCopyTotale: document.getElementById("btnCopyTotale"),
     btnReset: document.getElementById("btnReset"),
+    selectSiteAnalogue: document.getElementById("selectSiteAnalogue"),
+    btnEffacerPIRE: document.getElementById("btnEffacerPIRE"),
+    infoSiteAnalogue: document.getElementById("infoSiteAnalogue"),
     appMessage: document.getElementById("appMessage")
   };
 }
@@ -174,6 +177,78 @@ export function populateBandInputsFromState(state) {
       );
     }
   });
+}
+
+export function populateSiteAnalogueSelect(dom, sites) {
+  if (!dom.selectSiteAnalogue) return;
+
+  dom.selectSiteAnalogue.innerHTML = "";
+
+  const defaultOption = document.createElement("option");
+  defaultOption.value = "";
+  defaultOption.textContent = "Chargement manuel (par défaut)";
+  dom.selectSiteAnalogue.appendChild(defaultOption);
+
+  sites.forEach((site) => {
+    const option = document.createElement("option");
+    option.value = site.id;
+    option.textContent = site.label;
+    dom.selectSiteAnalogue.appendChild(option);
+  });
+}
+
+export function renderSiteAnalogueInfo(dom, message = "") {
+  if (!dom.infoSiteAnalogue) return;
+  dom.infoSiteAnalogue.textContent = message;
+}
+
+export function clearBandFields(state) {
+  const visibleBandKeys = getVisibleBandKeys(state.settings.modeFF);
+
+  visibleBandKeys.forEach((bandKey) => {
+    for (let i = 0; i < APP_CONFIG.nbMaxPireParBande; i += 1) {
+      const pireInput = document.getElementById(`pire-${bandKey}-${i}`);
+      if (pireInput) pireInput.value = "";
+    }
+
+    const attInput = document.getElementById(`att-${bandKey}`);
+    if (attInput) attInput.value = "";
+
+    const expoInput = document.getElementById(`expo-${bandKey}`);
+    if (expoInput) expoInput.value = "";
+  });
+}
+
+export function clearGlobalResults(dom) {
+  if (dom.expoFFInput) dom.expoFFInput.value = "";
+  if (dom.expoFOInput) dom.expoFOInput.value = "";
+  if (dom.expoTotaleInput) dom.expoTotaleInput.value = "";
+}
+
+export function writePireValuesToBand(bandKey, values = []) {
+  for (let i = 0; i < APP_CONFIG.nbMaxPireParBande; i += 1) {
+    const input = document.getElementById(`pire-${bandKey}-${i}`);
+    if (!input) continue;
+
+    const value = values[i];
+    input.value = value == null ? "" : String(value);
+  }
+}
+
+export function writeAttenuationValueToBand(bandKey, value = "") {
+  const input = document.getElementById(`att-${bandKey}`);
+  if (!input) return;
+  input.value = value == null ? "" : String(value);
+}
+
+export function resetSiteAnalogueSelection(dom) {
+  if (dom.selectSiteAnalogue) {
+    dom.selectSiteAnalogue.value = "";
+  }
+
+  if (dom.infoSiteAnalogue) {
+    dom.infoSiteAnalogue.textContent = "";
+  }
 }
 
 export function readInputsIntoState(state, dom) {
