@@ -26,11 +26,11 @@ const sitesPireAnalogues = [
     hma_m: 23,
     type_document: "DIM",
     annee: 2025,
-    site_nom: "Aste",
-    label: "SFR | Zone montagneuse | HMA 23 m | DIM 2025 | Asté",
+    site_nom: "Asté (65200)",
+    label: "SFR | Zone montagneuse | HMA 22.7 m | DIM 2025 | Asté (65200)",
     pires: {
-      "3G900": 30,
-      "4G700": 33,
+      "3G900": 33,
+      "4G700": 30,
       "4G800": 33
     }
   },
