@@ -148,7 +148,7 @@ const sitesPireAnalogues = [
       "4G1800": 33,
       "4G2100": 33,
       "4G2600": 33,
-      "5G700" : 31,
+      "5G700": 31,
       "5G3500": 47.6
     }
   },
@@ -234,7 +234,7 @@ const sitesPireAnalogues = [
       "4G800": 32.4,
       "4G1800": 34.8,
       "4G2100": 34.8,
-      "4G2600": 35.8,
+      "4G2600": 35.8
     }
   },
   {
@@ -245,7 +245,7 @@ const sitesPireAnalogues = [
     type_document: "DIM",
     annee: 2023,
     site_nom: "Villeneuve-Loubet - 235 avenue de la Bermone",
-    label: "FREE | Agglomération | HMA 9.26 m | DIM 2023 | Villeneuve-Loubet - 235 avenue de la Bermone",
+    label: "FREE | Agglomération | HMA 9.25 m | DIM 2023 | Villeneuve-Loubet - 235 avenue de la Bermone",
     pires: {
       "4G700": 31,
       "5G700": 31,
