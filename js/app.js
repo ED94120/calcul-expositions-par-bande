@@ -276,6 +276,7 @@ function bindEvents() {
 }
 
 function init() {
+  validateAppConfig();
   dom = cacheDom();
   state = createInitialState();
   state = recomputeState(state);
