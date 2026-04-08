@@ -20,6 +20,14 @@ let state = null;
 let dom = null;
 let isBulkUpdating = false;
 
+function validateAppConfig() {
+  if (APP_CONFIG.nbMaxPireParBande < 5) {
+    throw new Error(
+      "APP_CONFIG.nbMaxPireParBande ne doit pas être inférieur à 5."
+    );
+  }
+}
+
 function syncAndRecompute() {
   if (isBulkUpdating) return;
   readInputsIntoState(state, dom);
