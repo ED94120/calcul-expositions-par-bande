@@ -1,7 +1,7 @@
 const sitesPireAnalogues = [
   {
     id: "site_001",
-    operateur: "Bouygues",
+    operateur: "BOUYGUES",
     environnement: "agglomeration_dense",
     hma_m: 26.6,
     type_document: "SIMU",
@@ -56,7 +56,7 @@ const sitesPireAnalogues = [
   },
   {
     id: "site_004",
-    operateur: "Bouygues",
+    operateur: "BOUYGUES",
     environnement: "zone_rurale",
     hma_m: 16.6,
     type_document: "DIM",
@@ -95,7 +95,7 @@ const sitesPireAnalogues = [
   },
     {
     id: "site_006",
-    operateur: "Bouygues",
+    operateur: "BOUYGUES",
     environnement: "agglomeration_dense",
     hma_m: 16.11,
     type_document: "DIM",
@@ -114,7 +114,7 @@ const sitesPireAnalogues = [
   },
    {
     id: "site_007",
-    operateur: "Bouygues",
+    operateur: "BOUYGUES",
     environnement: "agglomeration_dense",
     hma_m: 30.15,
     type_document: "DIM",
@@ -143,7 +143,7 @@ const sitesPireAnalogues = [
     label: "FREE | Agglomération dense | HMA 45.95 m | DIM 2023 | Paris - 28/34 rue Archereau",
     pires: {
       "3G900": 29,
-      "3G2100" : 30,
+      "3G2100": 30,
       "4G700": 31,
       "4G1800": 33,
       "4G2100": 33,
@@ -154,7 +154,7 @@ const sitesPireAnalogues = [
   },
   {
     id: "site_009",
-    operateur: "Orange",
+    operateur: "ORANGE",
     environnement: "zone_rurale",
     hma_m: 28.6,
     type_document: "DIM",
@@ -165,7 +165,7 @@ const sitesPireAnalogues = [
       "4G800": 32.40,
       "4G1800": 34.80,
       "4G2100": 34.80,
-      "5G700" : 32.40
+      "5G700": 32.40
     }
   },
   {
@@ -183,12 +183,12 @@ const sitesPireAnalogues = [
       "3G900": 29,
       "4G1800": 33,
       "4G2100": 33,
-      "4G2600" : 33
+      "4G2600": 33
     }
   },
   {
     id: "site_011",
-    operateur: "Orange",
+    operateur: "ORANGE",
     environnement: "zone_rurale",
     hma_m: 34.50,
     type_document: "DIM",
@@ -222,7 +222,7 @@ const sitesPireAnalogues = [
   },
   {
     id: "site_013",
-    operateur: "Orange",
+    operateur: "ORANGE",
     environnement: "zone_rurale",
     hma_m: 24.6,
     type_document: "DIM",
@@ -249,7 +249,7 @@ const sitesPireAnalogues = [
     pires: {
       "4G700": 31,
       "5G700": 31,
-      "3G900": 29
+      "3G900": 29,
       "4G1800": 33,
       "4G2100": 33,
       "4G2600": 33,
@@ -258,7 +258,7 @@ const sitesPireAnalogues = [
   },
   {
     id: "site_015",
-    operateur: "Bouygues",
+    operateur: "BOUYGUES",
     environnement: "agglomeration_dense",
     hma_m: 24.5,
     type_document: "SIMU",
