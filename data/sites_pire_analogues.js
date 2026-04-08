@@ -280,6 +280,26 @@ const sitesPireAnalogues = [
     id: "site_016",
     operateur: "BOUYGUES",
     environnement: "agglomeration_dense",
+    hma_m: 13.5,
+    type_document: "SIMU",
+    annee: 2024,
+    site_nom: "Noisy-le-Sec - 9 place du Moulin fondu",
+    label: "Bouygues | Agglomération dense | HMA 13.5 m | SIMU 2024 | Noisy-le-Sec - 9 place du Moulin fondu",
+    pires: {
+      "3G900": 30.75,
+      "4G700": 33.29,
+      "4G800": 33.29,
+      "4G1800": 38.69,
+      "4G2100": 35.17,
+      "4G2600": 35.40,
+      "5G2100": 32.20,
+      "5G3500": 48.30
+    }
+  },
+  {
+    id: "site_017",
+    operateur: "BOUYGUES",
+    environnement: "agglomeration_dense",
     hma_m: 24.5,
     type_document: "SIMU",
     annee: 2025,
