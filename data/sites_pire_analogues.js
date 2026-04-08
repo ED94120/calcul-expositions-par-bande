@@ -196,13 +196,32 @@ const sitesPireAnalogues = [
     site_nom: "Saint Péran (35380) - Lande Alouette",
     label: "Orange | Zone rurale | HMA 34.50 m | DIM 2022 | Saint Péran (35380) - Lande Alouette",
     pires: {
-      "3G900": 29,40,
-      "4G700": 32,40,
-      "4G800": 32,40
+      "3G900": 29.40,
+      "4G700": 32.40,
+      "4G800": 32.40
     }
   },
   {
     id: "site_012",
+    operateur: "FREE",
+    environnement: "agglomeration_dense",
+    hma_m: 31.85,
+    type_document: "DIM",
+    annee: 2023,
+    site_nom: "Paris - 25 Bis rue de Romainville",
+    label: "FREE | Agglomération dense | HMA 31.85 m | DIM 2023 | Paris - 25 Bis rue de Romainville",
+    pires: {
+      "4G700": 31,
+      "5G700": 31,
+      "3G900": 29,
+      "4G1800": 33,
+      "4G2100": 33,
+      "4G2600": 33,
+      "5G3500": 47.60
+    }
+  },
+  {
+    id: "site_013",
     operateur: "Bouygues",
     environnement: "agglomeration_dense",
     hma_m: 24.5,
