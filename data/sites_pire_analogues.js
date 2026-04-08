@@ -247,13 +247,13 @@ const sitesPireAnalogues = [
     site_nom: "Villeneuve-Loubet - 235 avenue de la Bermone",
     label: "FREE | Agglomération | HMA 9.25 m | DIM 2023 | Villeneuve-Loubet - 235 avenue de la Bermone",
     pires: {
-      "4G700": 31,
-      "5G700": 31,
-      "3G900": 29,
-      "4G1800": 33,
-      "4G2100": 33,
-      "4G2600": 33,
-      "5G3500": 47.6
+      "4G700": 31.00,
+      "5G700": 31.00,
+      "3G900": 29.00,
+      "4G1800": 33.00,
+      "4G2100": 33.00,
+      "4G2600": 33.00,
+      "5G3500": 47.60
     }
   },
   {
@@ -263,8 +263,8 @@ const sitesPireAnalogues = [
     hma_m: 23,
     type_document: "SIMU",
     annee: 2025,
-    site_nom: "Rennnes - 38/40 avenue du sergent Maginot",
-    label: "Bouygues | Agglomération dense | HMA 23 m | SIMU 2025 | Rennnes - 38/40 avenue du sergent Maginot",
+    site_nom: "Rennes - 38/40 avenue du sergent Maginot",
+    label: "Bouygues | Agglomération dense | HMA 23 m | SIMU 2025 | Rennes - 38/40 avenue du sergent Maginot",
     pires: {
       "3G900": 30.88,
       "4G700": 32.89,
