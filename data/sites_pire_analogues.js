@@ -1,4 +1,4 @@
-const sitesPireAnalogues = [
+window.sitesPireAnalogues = [
   {
     id: "site_001",
     operateur: "BOUYGUES",
