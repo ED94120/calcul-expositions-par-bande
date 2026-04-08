@@ -239,6 +239,25 @@ const sitesPireAnalogues = [
   },
   {
     id: "site_014",
+    operateur: "FREE",
+    environnement: "agglomeration",
+    hma_m: 9.25,
+    type_document: "DIM",
+    annee: 2023,
+    site_nom: "Villeneuve-Loubet - 235 avenue de la Bermone",
+    label: "FREE | Agglomération | HMA 9.26 m | DIM 2023 | Villeneuve-Loubet - 235 avenue de la Bermone",
+    pires: {
+      "4G700": 31,
+      "5G700": 31,
+      "3G900": 29
+      "4G1800": 33,
+      "4G2100": 33,
+      "4G2600": 33,
+      "5G3500": 47.6
+    }
+  },
+  {
+    id: "site_015",
     operateur: "Bouygues",
     environnement: "agglomeration_dense",
     hma_m: 24.5,
