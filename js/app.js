@@ -6,14 +6,22 @@ import {
   cacheDom,
   readInputsIntoState,
   renderApp,
-  showAppMessage
+  showAppMessage,
+  populateSiteAnalogueSelect,
+  renderSiteAnalogueInfo,
+  clearBandFields,
+  clearGlobalResults,
+  writePireValuesToBand,
+  resetSiteAnalogueSelection
 } from "./ui.js";
 import { copyTextToClipboard, formatNumberForCopy } from "./utils.js";
 
 let state = null;
 let dom = null;
+let isBulkUpdating = false;
 
 function syncAndRecompute() {
+  if (isBulkUpdating) return;
   readInputsIntoState(state, dom);
   state = recomputeState(state);
   renderApp(state, dom);
@@ -51,11 +59,119 @@ function clearBandData(stateObj, bandKey) {
 
 function clearIncompatibleBandsForMode(stateObj, nextMode) {
   if (nextMode === MODE_FF.TROIS_BANDES) {
+    clearBandData(stateObj, BAND_KEYS.MF_HF);
+  } else {
     clearBandData(stateObj, BAND_KEYS.MF);
     clearBandData(stateObj, BAND_KEYS.HF);
-  } else {
-    clearBandData(stateObj, BAND_KEYS.MF_HF);
   }
+}
+
+function getSitesPireAnalogues() {
+  return Array.isArray(window.sitesPireAnalogues) ? window.sitesPireAnalogues : [];
+}
+
+function findSiteById(siteId) {
+  return getSitesPireAnalogues().find((site) => site.id === siteId) ?? null;
+}
+
+function mapSitePiresToBands(site, modeFF) {
+  const p = site?.pires ?? {};
+
+  const bfValues = [
+    p["2G900"],
+    p["3G900"],
+    p["4G700"],
+    p["5G700"],
+    p["4G800"]
+  ];
+
+  const b3500Values = [
+    p["5G3500"]
+  ];
+
+  if (modeFF === MODE_FF.TROIS_BANDES) {
+    return {
+      [BAND_KEYS.BF]: bfValues,
+      [BAND_KEYS.MF]: [
+        p["4G1800"],
+        p["3G2100"],
+        p["4G2100"],
+        p["5G2100"]
+      ],
+      [BAND_KEYS.HF]: [
+        p["4G2600"]
+      ],
+      [BAND_KEYS.B3500]: b3500Values
+    };
+  }
+
+  return {
+    [BAND_KEYS.BF]: bfValues,
+    [BAND_KEYS.MF_HF]: [
+      p["4G1800"],
+      p["3G2100"],
+      p["4G2100"],
+      p["5G2100"],
+      p["4G2600"]
+    ],
+    [BAND_KEYS.B3500]: b3500Values
+  };
+}
+
+function clearAllPireFieldsAndResults() {
+  isBulkUpdating = true;
+
+  clearBandFields(state);
+  clearGlobalResults(dom);
+  renderSiteAnalogueInfo(dom, "");
+  resetSiteAnalogueSelection(dom);
+
+  readInputsIntoState(state, dom);
+
+  Object.values(state.bands).forEach((band) => {
+    band.pireTexts = Array(APP_CONFIG.nbMaxPireParBande).fill("");
+    band.attenuationText = "";
+    band.exposition = null;
+    band.pireErrors = Array(APP_CONFIG.nbMaxPireParBande).fill("");
+    band.attenuationError = "";
+    band.status = "vide";
+    band.errorMessage = "";
+  });
+
+  state.results.expoFF = null;
+  state.results.expoFO = null;
+  state.results.expoTotale = null;
+
+  isBulkUpdating = false;
+  state = recomputeState(state);
+  renderApp(state, dom);
+}
+
+function loadSiteAnalogue(siteId) {
+  const site = findSiteById(siteId);
+
+  if (!site) {
+    renderSiteAnalogueInfo(dom, "");
+    return;
+  }
+
+  readInputsIntoState(state, dom);
+
+  const mapped = mapSitePiresToBands(site, state.settings.modeFF);
+
+  isBulkUpdating = true;
+
+  clearBandFields(state);
+  clearGlobalResults(dom);
+
+  Object.entries(mapped).forEach(([bandKey, values]) => {
+    writePireValuesToBand(bandKey, values);
+  });
+
+  renderSiteAnalogueInfo(dom, `Exemple chargé : ${site.label}`);
+
+  isBulkUpdating = false;
+  syncAndRecompute();
 }
 
 function handleModeChange(nextMode) {
@@ -77,6 +193,10 @@ function handleModeChange(nextMode) {
   clearIncompatibleBandsForMode(state, nextMode);
   state = recomputeState(state);
   renderApp(state, dom);
+
+  if (dom.selectSiteAnalogue && dom.selectSiteAnalogue.value) {
+    loadSiteAnalogue(dom.selectSiteAnalogue.value);
+  }
 }
 
 async function handleCopy(value) {
@@ -113,6 +233,26 @@ function bindEvents() {
     }
   });
 
+  if (dom.selectSiteAnalogue) {
+    dom.selectSiteAnalogue.addEventListener("change", (event) => {
+      const siteId = event.target.value;
+
+      if (!siteId) {
+        renderSiteAnalogueInfo(dom, "");
+        return;
+      }
+
+      loadSiteAnalogue(siteId);
+    });
+  }
+
+  if (dom.btnEffacerPIRE) {
+    dom.btnEffacerPIRE.addEventListener("click", () => {
+      clearAllPireFieldsAndResults();
+      showAppMessage(dom, "PIRE effacées");
+    });
+  }
+
   dom.btnCopyFF.addEventListener("click", () => handleCopy(state.results.expoFF));
   dom.btnCopyFO.addEventListener("click", () => handleCopy(state.results.expoFO));
   dom.btnCopyTotale.addEventListener("click", () => handleCopy(state.results.expoTotale));
@@ -121,6 +261,8 @@ function bindEvents() {
     state = createInitialState();
     state = recomputeState(state);
     renderApp(state, dom);
+    resetSiteAnalogueSelection(dom);
+    renderSiteAnalogueInfo(dom, "");
     showAppMessage(dom, "");
   });
 }
@@ -130,6 +272,9 @@ function init() {
   state = createInitialState();
   state = recomputeState(state);
   renderApp(state, dom);
+
+  populateSiteAnalogueSelect(dom, getSitesPireAnalogues());
+
   bindEvents();
 }
 
