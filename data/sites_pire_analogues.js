@@ -93,8 +93,27 @@ const sitesPireAnalogues = [
       "5G3500": 46
     }
   },
-  {
+    {
     id: "site_006",
+    operateur: "Bouygues",
+    environnement: "agglomeration_dense",
+    hma_m: 16.11,
+    type_document: "DIM",
+    annee: 2026,
+    site_nom: "Les Mureaux - 1 rue Paul Curien",
+    label: "Bouygues | Agglomération dense | HMA 16.11 m | DIM 2025 | Les Mureaux - 1 rue Paul Curien",
+    pires: {
+      "4G700": 33.53,
+      "4G800": 34.03,
+      "4G1800": 38.84,
+      "4G2100": 38.19,
+      "4G2600": 37.13,
+      "5G2100": 38.19,
+      "5G3500": 47.30
+    }
+  },
+  {
+    id: "site_007",
     operateur: "Bouygues",
     environnement: "agglomeration_dense",
     hma_m: 24.5,
