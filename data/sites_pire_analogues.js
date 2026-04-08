@@ -222,6 +222,23 @@ const sitesPireAnalogues = [
   },
   {
     id: "site_013",
+    operateur: "Orange",
+    environnement: "zone_rurale",
+    hma_m: 24.6,
+    type_document: "DIM",
+    annee: 2023,
+    site_nom: "Bayonne - chemin de Lannot",
+    label: "Orange | Zone rurale | HMA 24.6 m | DIM 2023 | Bayonne - chemin de Lannot",
+    pires: {
+      "4G700": 32.4,
+      "4G800": 32.4,
+      "4G1800": 34.8,
+      "4G2100": 34.8,
+      "4G2600": 35.8,
+    }
+  },
+  {
+    id: "site_014",
     operateur: "Bouygues",
     environnement: "agglomeration_dense",
     hma_m: 24.5,
