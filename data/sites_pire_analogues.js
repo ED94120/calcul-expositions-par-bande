@@ -57,6 +57,43 @@ const sitesPireAnalogues = [
   {
     id: "site_004",
     operateur: "Bouygues",
+    environnement: "zone_rurale",
+    hma_m: 16.6,
+    type_document: "DIM",
+    annee: 2024,
+    site_nom: "Betton - 2 allée des Goélettes",
+    label: "Bouygues | Zone rurale | HMA 16.6 m | DIM 2024 | Betton - 2 allée des Goélettes",
+    pires: {
+      "3G900": 31.82,
+      "4G700": 33.68,
+      "4G800": 34.68,
+      "4G1800": 38.09,
+      "4G2100": 32.87,
+      "4G2600": 36.88
+    }
+  },
+    {
+    id: "site_005",
+    operateur: "SFR",
+    environnement: "zone_rurale",
+    hma_m: 27.17,
+    type_document: "DIM",
+    annee: 2025,
+    site_nom: "Betton - La Jannais",
+    label: "SFR | Zone rurale | HMA 27.17 m | DIM 2025 | Betton - La Jannais",
+    pires: {
+      "4G700": 30,
+      "4G800": 33,
+      "2G900": 33.50,
+      "3G900": 33,
+      "4G1800": 33,
+      "4G2100": 35,
+      "4G2600": 36
+    }
+  },
+  {
+    id: "site_006",
+    operateur: "Bouygues",
     environnement: "agglomeration_dense",
     hma_m: 24.5,
     type_document: "SIMU",
