@@ -14,10 +14,10 @@ const sitesPireAnalogues = [
       "4G700": 33.40,
       "4G800": 33.80,
       "4G1800": 39.20,
-      "4G2100": 36,
-      "4G2600": 36.8,
-      "5G2100": 33,
-      "5G3500": 46.7
+      "4G2100": 36.00,
+      "4G2600": 36.80,
+      "5G2100": 33.00,
+      "5G3500": 46.70
     }
   },
   {
@@ -30,9 +30,9 @@ const sitesPireAnalogues = [
     site_nom: "Asté (65200)",
     label: "SFR | Zone montagneuse | HMA 22.7 m | DIM 2025 | Asté (65200)",
     pires: {
-      "3G900": 33,
-      "4G700": 30,
-      "4G800": 33
+      "3G900": 33.00,
+      "4G700": 30.00,
+      "4G800": 33.00
     }
   },
   {
@@ -45,13 +45,13 @@ const sitesPireAnalogues = [
     site_nom: "Boissy l'Aillerie (95650)",
     label: "FREE | Zone rurale | HMA 34.6 m | DIM 2023 | Boissy l'Aillerie (95650)",
     pires: {
-      "4G700": 31,
-      "5G700": 31,
-      "3G900": 29,
-      "4G1800": 33,
-      "4G2100": 33,
-      "4G2600": 33,
-      "5G3500": 47
+      "4G700": 31.00,
+      "5G700": 31.00,
+      "3G900": 29.00,
+      "4G1800": 33.00,
+      "4G2100": 33.00,
+      "4G2600": 33.00,
+      "5G3500": 47.00
     }
   },
   {
@@ -83,14 +83,14 @@ const sitesPireAnalogues = [
     site_nom: "Betton - La Jannais",
     label: "SFR | Zone rurale | HMA 27.17 m | DIM 2025 | Betton - La Jannais",
     pires: {
-      "4G700": 30,
-      "4G800": 33,
+      "4G700": 30.00,
+      "4G800": 33.00,
       "2G900": 33.50,
-      "3G900": 33,
-      "4G1800": 33,
-      "4G2100": 35,
-      "4G2600": 36,
-      "5G3500": 46
+      "3G900": 33.00,
+      "4G1800": 33.00,
+      "4G2100": 35.00,
+      "4G2600": 36.00,
+      "5G3500": 46.00
     }
   },
     {
@@ -122,14 +122,14 @@ const sitesPireAnalogues = [
     site_nom: "Lille - 59 boulevard Vauban",
     label: "Bouygues | Agglomération dense | HMA 30.15 m | DIM 2025 | Lille - 59 boulevard Vauban",
     pires: {
-      "3G900": 31.5,
-      "4G700": 31.5,
-      "4G800": 31.5,
-      "4G1800": 36,
-      "4G2100": 36,
-      "4G2600": 36,
-      "5G2100": 36,
-      "5G3500": 49.3
+      "3G900": 31.50,
+      "4G700": 31.50,
+      "4G800": 31.50,
+      "4G1800": 36.00,
+      "4G2100": 36.00,
+      "4G2600": 36.00,
+      "5G2100": 36.00,
+      "5G3500": 49.30
     }
   },
      {
@@ -142,14 +142,14 @@ const sitesPireAnalogues = [
     site_nom: "Paris - 28/34 rue Archereau",
     label: "FREE | Agglomération dense | HMA 45.95 m | DIM 2023 | Paris - 28/34 rue Archereau",
     pires: {
-      "3G900": 29,
-      "3G2100": 30,
-      "4G700": 31,
-      "4G1800": 33,
-      "4G2100": 33,
-      "4G2600": 33,
-      "5G700": 31,
-      "5G3500": 47.6
+      "3G900": 29.00,
+      "3G2100": 30.00,
+      "4G700": 31.00,
+      "4G1800": 33.00,
+      "4G2100": 33.00,
+      "4G2600": 33.00,
+      "5G700": 31.00,
+      "5G3500": 47.60
     }
   },
   {
@@ -178,12 +178,12 @@ const sitesPireAnalogues = [
     site_nom: "Plumergat (56400) - Lann Mangouero sud",
     label: "FREE | Zone rurale | HMA 34.65 m | DIM 2024 | Plumergat (56400) - Lann Mangouero sud",
     pires: {
-      "4G700": 31,
-      "5G700": 31,
-      "3G900": 29,
-      "4G1800": 33,
-      "4G2100": 33,
-      "4G2600": 33
+      "4G700": 31.00,
+      "5G700": 31.00,
+      "3G900": 29.00,
+      "4G1800": 33.00,
+      "4G2100": 33.00,
+      "4G2600": 33.00
     }
   },
   {
@@ -211,12 +211,12 @@ const sitesPireAnalogues = [
     site_nom: "Paris - 25 Bis rue de Romainville",
     label: "FREE | Agglomération dense | HMA 31.85 m | DIM 2023 | Paris - 25 Bis rue de Romainville",
     pires: {
-      "4G700": 31,
-      "5G700": 31,
-      "3G900": 29,
-      "4G1800": 33,
-      "4G2100": 33,
-      "4G2600": 33,
+      "4G700": 31.00,
+      "5G700": 31.00,
+      "3G900": 29.00,
+      "4G1800": 33.00,
+      "4G2100": 33.00,
+      "4G2600": 33.00,
       "5G3500": 47.60
     }
   },
@@ -230,11 +230,11 @@ const sitesPireAnalogues = [
     site_nom: "Bayonne - chemin de Lannot",
     label: "Orange | Zone rurale | HMA 24.6 m | DIM 2023 | Bayonne - chemin de Lannot",
     pires: {
-      "4G700": 32.4,
-      "4G800": 32.4,
-      "4G1800": 34.8,
-      "4G2100": 34.8,
-      "4G2600": 35.8
+      "4G700": 32.40,
+      "4G800": 32.40,
+      "4G1800": 34.80,
+      "4G2100": 34.80,
+      "4G2600": 35.80
     }
   },
   {
@@ -258,6 +258,26 @@ const sitesPireAnalogues = [
   },
   {
     id: "site_015",
+    operateur: "BOUYGUES",
+    environnement: "agglomeration_dense",
+    hma_m: 23,
+    type_document: "SIMU",
+    annee: 2025,
+    site_nom: "Rennnes - 38/40 avenue du sergent Maginot",
+    label: "Bouygues | Agglomération dense | HMA 23 m | SIMU 2025 | Rennnes - 38/40 avenue du sergent Maginot",
+    pires: {
+      "3G900": 30.88,
+      "4G700": 32.89,
+      "4G800": 33.89,
+      "4G1800": 40.00,
+      "4G2100": 36.49,
+      "4G2600": 36.99,
+      "5G2100": 33.48,
+      "5G3500": 47.80
+    }
+  },
+  {
+    id: "site_016",
     operateur: "BOUYGUES",
     environnement: "agglomeration_dense",
     hma_m: 24.5,
