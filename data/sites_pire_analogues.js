@@ -154,6 +154,22 @@ const sitesPireAnalogues = [
   },
   {
     id: "site_009",
+    operateur: "Orange",
+    environnement: "zone_rurale",
+    hma_m: 28.6,
+    type_document: "DIM",
+    annee: 2025,
+    site_nom: "Saint Gilles (35590) - rue de la ville Benêt",
+    label: "Orange | Zone rurale | HMA 28.6 m | DIM 2025 | Saint Gilles (35590) - rue de la ville Benêt",
+    pires: {
+      "4G800": 32.40,
+      "4G1800": 34.80,
+      "4G2100": 34.80,
+      "5G700" : 32.40,
+    }
+  },
+  {
+    id: "site_010",
     operateur: "Bouygues",
     environnement: "agglomeration_dense",
     hma_m: 24.5,
