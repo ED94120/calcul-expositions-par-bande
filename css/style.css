@@ -208,6 +208,37 @@ button:focus {
   color: var(--color-text-soft);
 }
 
+/* Options de chargement */
+
+.load-options {
+  margin-top: 0.5rem;
+}
+
+.load-options label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 500;
+  min-height: auto;
+}
+
+.load-options-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+#selectSiteAnalogue {
+  flex: 0 1 760px;
+  max-width: 760px;
+  min-width: 320px;
+}
+
+#btnEffacerPIRE {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
 /* Grille des bandes */
 
 .bands-grid {
@@ -457,31 +488,9 @@ button:hover {
     width: 100%;
   }
 
-  .load-options {
-    margin-top: 0.5rem;
-  }
-  
-  .load-options label {
-    display: block;
-    margin-bottom: 0.35rem;
-    font-weight: 500;
-  }
-  
-  .load-options-controls {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-  }
-  
   #selectSiteAnalogue {
-    flex: 0 1 760px;
-    max-width: 760px;
-    min-width: 320px;
-  }
-  
-  #btnEffacerPIRE {
-    flex: 0 0 auto;
-    white-space: nowrap;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
   }
 }
