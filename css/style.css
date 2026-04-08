@@ -136,6 +136,7 @@ label[for="distance3dFO"] {
 
 .field-group-vitrage {
   grid-column: 1 / 2;
+  margin-top: -1.2rem;
 }
 
 /* Inputs */
