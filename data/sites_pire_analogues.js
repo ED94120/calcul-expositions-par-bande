@@ -101,7 +101,7 @@ const sitesPireAnalogues = [
     type_document: "DIM",
     annee: 2026,
     site_nom: "Les Mureaux - 1 rue Paul Curien",
-    label: "Bouygues | Agglomération dense | HMA 16.11 m | DIM 2025 | Les Mureaux - 1 rue Paul Curien",
+    label: "Bouygues | Agglomération dense | HMA 16.11 m | DIM 2026 | Les Mureaux - 1 rue Paul Curien",
     pires: {
       "4G700": 33.53,
       "4G800": 34.03,
@@ -112,8 +112,28 @@ const sitesPireAnalogues = [
       "5G3500": 47.30
     }
   },
-  {
+   {
     id: "site_007",
+    operateur: "Bouygues",
+    environnement: "agglomeration_dense",
+    hma_m: 30.15,
+    type_document: "DIM",
+    annee: 2025,
+    site_nom: "Lille - 59 boulevard Vauban",
+    label: "Bouygues | Agglomération dense | HMA 30.15 m | DIM 2025 | Lille - 59 boulevard Vauban",
+    pires: {
+      "3G900": 31.5,
+      "4G700": 31.5,
+      "4G800": 31.5,
+      "4G1800": 36,
+      "4G2100": 36,
+      "4G2600": 36,
+      "5G2100": 36,
+      "5G3500": 49.3
+    }
+  },
+  {
+    id: "site_008",
     operateur: "Bouygues",
     environnement: "agglomeration_dense",
     hma_m: 24.5,
