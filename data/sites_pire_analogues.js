@@ -38,19 +38,21 @@ const sitesPireAnalogues = [
   {
     id: "site_003",
     operateur: "Bouygues",
-    environnement: "zone_rurale",
-    hma_m: 28,
+    environnement: "agglomeration_dense",
+    hma_m: 24.5,
     type_document: "SIMU",
     annee: 2025,
-    site_nom: "Nontron - 25 rue des Lillas",
-    label: "Bouygues | Zone rurale | HMA 28 m | SIMU 2025 | Nontron - 25 rue des Lillas",
+    site_nom: "Paris - 55 rue de Belleville",
+    label: "Bouygues | Agglomération dense | HMA 24.5 m | SIMU 2025 | Paris - 55 rue de Belleville",
     pires: {
-      "3G900": 20,
-      "4G700": 32,
-      "4G800": 30,
-      "4G1800": 33,
-      "4G2600": 35,
-      "5G3500": 40
+      "3G900": 31.80,
+      "4G700": 33.30,
+      "4G800": 33.80,
+      "4G1800": 39.00,
+      "4G2100": 35.80,
+      "4G2600": 36.40,
+      "5G2100": 32.81,
+      "5G3500": 48.30
     }
   }
 ];
