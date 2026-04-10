@@ -114,11 +114,9 @@ export function computeExpoFF(state) {
       ? [BAND_KEYS.BF, BAND_KEYS.MF, BAND_KEYS.HF]
       : [BAND_KEYS.BF, BAND_KEYS.MF_HF];
 
-  const values = ffKeys
-    .map((key) => state.bands[key].exposition)
-    .filter((value) => value != null);
+  const values = ffKeys.map((key) => state.bands[key].exposition);
 
-  if (values.length === 0) return null;
+  if (values.some((value) => value == null)) return null;
 
   return Math.sqrt(values.reduce((sum, value) => sum + value ** 2, 0));
 }
@@ -172,21 +170,23 @@ export function recomputeState(state) {
       nextState.bands[bandKey].attenuationError = "";
     });
 
-  const hasInvalidDistanceForVisibleBands = visibleKeys.some((bandKey) =>
-    nextState.bands[bandKey].isFO
-      ? !distanceEvalFO.isValid
-      : !distanceEvalFF.isValid
-  );
+  const ffKeys =
+    nextState.settings.modeFF === "3bandes"
+      ? [BAND_KEYS.BF, BAND_KEYS.MF, BAND_KEYS.HF]
+      : [BAND_KEYS.BF, BAND_KEYS.MF_HF];
 
-  if (hasInvalidDistanceForVisibleBands || hasVisibleBandError(nextState)) {
-    nextState.results.expoFF = null;
-    nextState.results.expoFO = null;
-    nextState.results.expoTotale = null;
-    return nextState;
-  }
+  const foKeys = [BAND_KEYS.B3500];
 
-  nextState.results.expoFF = computeExpoFF(nextState);
-  nextState.results.expoFO = computeExpoFO(nextState);
+  const ffHasBlockingError =
+    !distanceEvalFF.isValid ||
+    ffKeys.some((bandKey) => nextState.bands[bandKey].status === BAND_STATUS.ERREUR);
+
+  const foHasBlockingError =
+    !distanceEvalFO.isValid ||
+    foKeys.some((bandKey) => nextState.bands[bandKey].status === BAND_STATUS.ERREUR);
+
+  nextState.results.expoFF = ffHasBlockingError ? null : computeExpoFF(nextState);
+  nextState.results.expoFO = foHasBlockingError ? null : computeExpoFO(nextState);
   nextState.results.expoTotale = computeExpoTotale(
     nextState.results.expoFF,
     nextState.results.expoFO
